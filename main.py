@@ -1,14 +1,21 @@
 import random
 
-n = int(input("Digite um numero de 1 a 10: "))
-esc = input("par ou impar: ").upper()
-p = random.randint(0, 10)
-soma = n + p
+v = 0
 
-resultado = "PAR" if soma % 2 == 0 else "IMPAR"
-print(f"A opção vencedora foi {resultado}")
+while True:
+    n = int(input("Digite um numero de 1 a 10: "))
+    esc = input("par ou impar: ").upper()
+    p = random.randint(0, 10)
+    soma = n + p
 
-if esc == resultado:
-    print("Voce venceu!")
-else:
-    print("Perdeu")
+    resultado = "PAR" if soma % 2 == 0 else "IMPAR"
+    print(f"A opção vencedora foi {resultado}")
+
+    if esc == resultado:
+        print("Voce venceu!")
+        v += 1
+    else:
+        print("Perdeu")
+        break
+
+print(f"Numero de vitorias foi {v}")
